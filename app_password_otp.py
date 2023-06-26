@@ -6,8 +6,8 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'supersecretkey'
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = 'martinanembrianimating@gmail.com'  # Aggiungi il tuo indirizzo email
-app.config['MAIL_PASSWORD'] = 'rxzzcibnofpxlysi'  # Aggiungi la tua password
+app.config['MAIL_USERNAME'] = 'latuamail@gmail.com'  # Aggiungi il tuo indirizzo email
+app.config['MAIL_PASSWORD'] = 'latuapassword'  # Aggiungi la tua password
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 
@@ -23,7 +23,7 @@ def login():
         username = request.form['username']
         password = request.form['password']
 
-        if username == 'martinanembrianimating@gmail.com' and password == '1234':
+        if username == 'latuamail@gmail.com' and password == '1234':
             otp_code = generate_otp_code()
             send_otp_email(username, otp_code)
             return redirect(url_for('verify_otp'))
